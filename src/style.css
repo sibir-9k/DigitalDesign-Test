@@ -1,0 +1,197 @@
+@import './libs/normalize.css';
+/* ------------------------------------------------- */
+:root {
+	--body-color: #eee;
+	--header-color: #fff;
+	--text-color: #000;
+	--back-to-top-color: #000;
+	--back-to-top-text-color: #fff;
+	--border-bottom-color: #aeadad;
+	--toggle-color: #eee;
+	--product-color: #fff;
+	--box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+	--date-added: #999;
+	--buy-color: #000;
+	--buy-text-color: #fff;
+	--footer-color: #ddd;
+	--footer-link: #555;
+}
+body.dark-theme {
+	--body-color: #161616;
+	--header-color: #282828;
+	--text-color: #fff;
+	--back-to-top-color: #fff;
+	--back-to-top-text-color: #000;
+	--border-bottom-color: #595959;
+	--toggle-color: #595959;
+	--product-color: #2a2a2a;
+	--box-shadow: 0 0.5rem 1rem rgba(255, 255, 255, 0.1);
+	--date-added: #bbb;
+	--buy-color: #fff;
+	--buy-text-color: #000;
+	--footer-color: #222;
+	--footer-link: #999;
+}
+/* ------------------------------------------------- */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	max-width: 1200px;
+	font-family: sans-serif;
+	margin: 0 auto;
+	background-color: var(--body-color);
+}
+.wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+.theme-toggle {
+	background-color: var(--toggle-color);
+	color: var(--text-color);
+	padding: 0.5rem;
+	border: none;
+	cursor: pointer;
+}
+.theme-toggle:hover {
+	border-radius: 20px;
+	transition: border-radius 0.2s linear;
+}
+/* ------------------------------------------------ */
+header {
+	display: flex;
+	align-items: center;
+	position: sticky;
+	padding: 25px 40px;
+	top: 0;
+	background-color: var(--header-color);
+	z-index: 1;
+	border-radius: 15px;
+	margin-bottom: 50px;
+}
+.logo {
+	font-size: 1.5rem;
+	color: var(--text-color);
+}
+.product-grid {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+header h1 {
+	margin: 0 1rem;
+	font-size: 1.5rem;
+	line-height: 3rem;
+	text-transform: uppercase;
+}
+header .category-menu {
+	margin-left: auto;
+}
+header .category-menu ul {
+	display: flex;
+	list-style: none;
+}
+header .category-menu li {
+	margin: 0 0.5rem;
+}
+header .category-menu a {
+	color: var(--text-color);
+	text-decoration: none;
+	font-size: 1.1rem;
+	border-bottom: 0;
+}
+header .category-menu a:after {
+	background-color: var(--border-bottom-color);
+	display: block;
+	content: '';
+	height: 2px;
+	width: 0%;
+	transition: width 0.3s ease-in-out;
+}
+header .category-menu a:hover:after,
+header .category-menu a:focus:after {
+	width: 100%;
+}
+/* -------------------------------------------------- */
+section {
+	padding: 2rem;
+	/* background-color: #eee; */
+	margin-top: -1rem;
+}
+section h2 {
+	margin-bottom: 10px;
+}
+.back-to-top {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	/* display: none; */
+}
+.back-to-top button {
+	background-color: var(--back-to-top-color);
+	color: var(--back-to-top-text-color);
+	border: none;
+	padding: 0.5rem 1rem;
+	font-size: 1.25rem;
+	cursor: pointer;
+}
+section h2 {
+	margin-top: 0;
+	font-size: 2rem;
+	text-transform: uppercase;
+	color: var(--text-color);
+}
+.product-card {
+	background-color: var(--product-color);
+	box-shadow: var(--box-shadow);
+	padding: 1rem;
+	margin-bottom: 2rem;
+	width: calc(80% - 1rem);
+}
+.product-card img {
+	width: 100%;
+}
+.product-card h3 {
+	margin: 0.5rem 0;
+	font-size: 1.25rem;
+	color: var(--text-color);
+}
+.product-card .date-added {
+	margin: 0.5rem 0;
+	font-size: 0.75rem;
+	color: var(--date-added);
+}
+.product-card .buy-button {
+	background-color: var(--buy-color);
+	color: var(--buy-text-color);
+	border: none;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	cursor: pointer;
+}
+/* ------------------------------------------------- */
+footer {
+	background-color: var(--footer-color);
+	padding: 1rem;
+	text-align: center;
+	border-radius: 15px;
+	padding: 25px 40px;
+}
+footer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+footer li {
+	display: inline-block;
+	margin-right: 1rem;
+}
+footer a {
+	color: var(--footer-link);
+	text-decoration: none;
+	padding: 0.25rem 0.5rem;
+	font-size: 1.1rem;
+}
+/* ------------------------------------------------- */
