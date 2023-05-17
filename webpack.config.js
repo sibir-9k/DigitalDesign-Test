@@ -66,7 +66,7 @@ module.exports = {
 			filename: '[name].css',
 		}),
 	],
-
+  devtool: 'inline-source-map',
 	devServer: {
 		static: {
 			directory: path.join(__dirname, 'dist'), // Каталог, откуда будет раздаваться статика
