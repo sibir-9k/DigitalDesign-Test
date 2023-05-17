@@ -1,65 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Digital Design</title>
-	</head>
-	<body>
-		<header>
-			<div class="logo"><b>SP</b>.shop</div>
-			<nav class="category-menu">
-				<ul>
-					<li><a href="#past">Past collection</a></li>
-					<li><a href="#new">New Collection</a></li>
-					<li><a href="#future">Future collection</a></li>
-				</ul>
-			</nav>
-			<button class="theme-toggle">Toggle Theme</button>
-		</header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digital Design</title>
+</head>
+<body>
+  <header>
+    <div class="logo"><b>SP</b>.shop</div>
+    <nav class="category-menu">
+      <ul>
+        <li><a href="#past">Past collection</a></li>
+        <li><a href="#new">New Collection</a></li>
+        <li><a href="#future">Future collection</a></li>
+      </ul>
+    </nav>
+    <button class="theme-toggle">Toggle Theme</button>
+  </header>
 
-		<main>
-			<div class="back-to-top">
-				<button>Back to Top</button>
-			</div>
+  <main>
+    <div class="back-to-top">
+      <button>Back to Top</button>
+    </div>
 
-			<section id="past">
-				<h2>Past collection</h2>
-				<div class="wrapper past">
-	
-				</div>
-			</section>
+    <section id="past">
+      <h2>Past collection</h2>
+      <div class="wrapper past"></div>
+    </section>
 
-			<section id="new">
-				<h2>New Collection</h2>
-				<div class="wrapper new">
-					
-				</div>
-			</section>
+    <section id="new">
+      <h2>New Collection</h2>
+      <div class="wrapper new"></div>
+    </section>
 
-			<section id="future">
-				<h2>Future collection</h2>
-				<div class="wrapper future">
-					<div class="product-grid">
-						<div class="product-card">
-							<img src="./assets/newBalance920.jpg" alt="Product Name" />
-							<h3>Product Name</h3>
-							<p class="date-added">Added on Jan 1, 2022</p>
-							<button class="buy-button">Buy</button>
-						</div>
-						<!-- More product cards go here -->
-					</div>
-				</div>
-			</section>
-		</main>
+    <section id="future">
+      <h2>Future collection</h2>
+      <div class="wrapper future"></div>
+    </section>
+  </main>
 
-		<footer>
-			<ul>
-				<li><a href="#past">Past collection</a></li>
-				<li><a href="#new">New Collection</a></li>
-				<li><a href="#future">Future collection</a></li>
-			</ul>
-		</footer>
-	</body>
+  <section class="modal">
+    <form class="modal-box" id="form" method="post">
+      <h3>Order form:</h3>
+      <label for=""></label>
+      <input type="number" name="count-product" id="number" min="1" max="10" defaultValue="1" />
+
+      <div class="radio-box">
+        <div>
+          <input type="radio" id="option1" name="color" value="color1" />
+          <input type="color"  id="option1" name="color1" value="#F5BB19" disabled />
+          <label for="option1">Цвет 1</label>
+        </div>
+        <div>
+          <input type="radio" id="option2" name="color" value="color2" />
+          <input type="color" id="option2" name="colorHEX" value="#99E665" disabled />
+          <label for="option2">Цвет 2</label>
+        </div>
+        <div>
+          <input type="radio" id="option3" name="color" value="color3" />
+          <input type="color" id="option3" name="colorHEX" value="#312EF5" disabled />
+          <label for="option3">Цвет 3</label>
+        </div>
+        <div>
+          <input type="radio" id="option4" name="color" value="color4" />
+          <input type="color" id="option4" name="colorHEX" value="#e66465" disabled />
+          <label for="option4">Цвет 4</label>
+        </div>
+      </div>
+
+      <textarea id="comment" name="comment" maxlength="2000" rows="4"></textarea>
+
+      <div class="btn-box">
+        <button class="btn-form buy" type="submit">Купить</button>
+        <button class="btn-form close">Закрыть</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <ul>
+      <li><a href="#past">Past collection</a></li>
+      <li><a href="#new">New Collection</a></li>
+      <li><a href="#future">Future collection</a></li>
+    </ul>
+  </footer>
+</body>
 </html>
