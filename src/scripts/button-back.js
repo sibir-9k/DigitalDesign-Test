@@ -1,4 +1,3 @@
-// Back to top button
 const backToTopButton = document.querySelector('.back-to-top button');
 
 backToTopButton.addEventListener('click', () => {
@@ -8,7 +7,6 @@ backToTopButton.addEventListener('click', () => {
 	});
 });
 
-// Show back to top button when scrolling
 window.addEventListener('scroll', () => {
 	if (window.scrollY > 350) {
 		backToTopButton.style.display = 'block';

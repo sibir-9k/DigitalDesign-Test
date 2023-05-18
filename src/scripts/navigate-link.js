@@ -1,4 +1,3 @@
-// Active navigation link
 const navLinks = Array.from(document.querySelectorAll('.category-menu a'));
 
 navLinks.forEach((link) => {
