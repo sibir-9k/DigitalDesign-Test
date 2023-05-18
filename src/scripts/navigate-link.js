@@ -1,6 +1,6 @@
 // Active navigation link
 const navLinks = Array.from(document.querySelectorAll('.category-menu a'));
-console.log(navLinks);
+
 navLinks.forEach((link) => {
 	link.addEventListener('click', (e) => {
 		e.preventDefault();

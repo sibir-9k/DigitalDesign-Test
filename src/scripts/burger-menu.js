@@ -4,7 +4,7 @@ const theme = document.querySelector('.theme-toggle');
 const nav = document.querySelector('nav');
 const liElements = nav.querySelectorAll('li');
 
-burger.addEventListener('click', function (e) {
+burger.addEventListener('click', (e) => {
 	e.preventDefault();
 	if (menu.classList.contains('active')) {
 		menu.classList.remove('active');
@@ -15,8 +15,8 @@ burger.addEventListener('click', function (e) {
 	}
 });
 
-liElements.forEach(function (li) {
-	li.addEventListener('click', function () {
+liElements.forEach((li) => {
+	li.addEventListener('click', () => {
 		menu.classList.remove('active');
 		theme.classList.remove('active');
 	});

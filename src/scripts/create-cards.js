@@ -4,7 +4,7 @@ import { dataFutureCollection } from '../data/data';
 
 const pastCollection = document.querySelector('.past');
 const newCollection = document.querySelector('.new');
-const futureCollaction = document.querySelector('.future');
+const futureCollection = document.querySelector('.future');
 
 const createCardProduct = (parentTag, data) => {
 	data.forEach((card) => {
@@ -39,4 +39,4 @@ const createCardProduct = (parentTag, data) => {
 
 createCardProduct(pastCollection, dataPastCollection);
 createCardProduct(newCollection, dataNewCollection);
-createCardProduct(futureCollaction, dataFutureCollection);
+createCardProduct(futureCollection, dataFutureCollection);

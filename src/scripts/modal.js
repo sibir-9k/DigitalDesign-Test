@@ -10,12 +10,12 @@ buyBtn.forEach((button) => {
 	});
 });
 
-closeBtnModal.addEventListener('click', function (event) {
+closeBtnModal.addEventListener('click', (event) => {
 	event.preventDefault();
 	modal.classList.remove('open');
 });
 
-function retrieveFormValue(event) {
+const retrieveFormValue = (event) => {
 	event.preventDefault();
 
 	let countProduct = document.getElementById('number'),
@@ -25,16 +25,10 @@ function retrieveFormValue(event) {
 	const valueForm = {
 		count: countProduct.value,
 		color: colorInput.value,
-		colorHex: colorInput.nextElementSibling.value,
 		comment: comment.value,
 	};
 
-	if (
-		countProduct.value === '' ||
-		colorInput.value === '' ||
-		colorInput.nextElementSibling.value === '' ||
-		comment.value === ''
-	) {
+	if (countProduct.value === '' || colorInput.value === '' || comment.value === '') {
 		buyBtnModal.disabled = true;
 		buyBtnModal.classList.add('disabled');
 	} else {
@@ -46,8 +40,9 @@ function retrieveFormValue(event) {
 		);
 	}
 
+	console.log(valueForm);
 	modal.classList.remove('open');
 	document.getElementById('form').reset();
-}
+};
 
 form.addEventListener('submit', retrieveFormValue);
