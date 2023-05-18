@@ -70,11 +70,18 @@ header {
 	z-index: 1;
 	border-radius: 15px;
 	margin-bottom: 50px;
+	z-index: 3;
 }
 .logo {
 	font-size: 1.5rem;
 	color: var(--text-color);
+	/* z-index: 3; */
 }
+
+.burger {
+	display: none;
+}
+
 .product-grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -130,7 +137,6 @@ section h2 {
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
-	/* display: none; */
 }
 .back-to-top button {
 	background-color: var(--back-to-top-color);
@@ -187,14 +193,17 @@ section h2 {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+
+	color: var(--text-color);
+	box-shadow: var(--box-shadow);
 }
-.modal.open{
-  display: flex;
+.modal.open {
+	display: flex;
 }
 .modal-box {
-	max-width: 500px;
+	background: var(--header-color);
+	width: 500px;
 	padding: 45px;
-	background-color: #fff;
 	z-index: 12;
 
 	display: flex;
@@ -203,9 +212,22 @@ section h2 {
 	justify-content: center;
 	border-radius: 30px;
 }
-.modal-box #number {
+
+h3 + label {
+	color: var(--text-color);
+	font-size: 1.5rem;
+	font-weight: bold;
+	margin-bottom: 1rem;
+}
+
+input[type='number'] {
 	text-align: center;
-	width: 30%;
+	width: 100%;
+	padding: 0.5rem;
+	border-radius: 0.3rem;
+	border: 1px solid var(--border-bottom-color);
+	background-color: var(--product-color);
+	color: var(--text-color);
 }
 .modal-box h3 {
 	margin-bottom: 25px;
@@ -213,44 +235,76 @@ section h2 {
 	text-transform: uppercase;
 	color: var(--text-color);
 }
+
 .radio-box {
 	margin: 18px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	width: 75%;
 	gap: 10px;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
 }
+
+.radio-color {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	margin: 5px;
+}
+.radio-block {
+	display: flex;
+	align-items: center;
+}
+.color1 {
+	background-color: #f5bb19;
+}
+.color2 {
+	background-color: #99e665;
+}
+.color3 {
+	background-color: #312ef5;
+}
+.color4 {
+	background-color: #e66465;
+}
+
 textarea {
 	width: 100%;
-	margin-bottom: 15px;
-	padding: 5px;
+	padding: 0.5rem;
+	border-radius: 0.3rem;
+	border: 1px solid var(--border-bottom-color);
+	background-color: var(--product-color);
+	color: var(--text-color);
+	margin-top: 1rem;
 }
 .btn-box {
 	display: flex;
 	justify-content: space-around;
 	width: 100%;
+	margin-top: 1rem;
 }
 .btn-form {
 	cursor: pointer;
-	width: auto;
-	height: auto;
-	padding: 5px 10px;
+	border-radius: 0.3rem;
+	padding: 0.5rem 1rem;
+	margin-right: 0.5rem;
 }
 
 .btn-form.buy {
-	background-color: green;
-	color: #fff;
-	border: inherit;
+	background-color: var(--buy-color);
+	color: var(--buy-text-color);
+	border: none;
 }
 
 .btn-form.close {
-	background-color: rgb(244, 42, 42);
-	color: #fff;
-	border: inherit;
+	background-color: var(--toggle-color);
+	color: var(--text-color);
+	border: none;
 }
 
+.disabled {
+	background-color: red;
+	color: white;
+}
 /* ------------------------------------------------- */
 footer {
 	background-color: var(--footer-color);
@@ -275,3 +329,94 @@ footer a {
 	font-size: 1.1rem;
 }
 /* ------------------------------------------------- */
+
+@media screen and (min-width: 320px) and (max-width: 430px) {
+	header {
+		justify-content: space-between;
+	}
+	.wrapper {
+		justify-content: center;
+	}
+	.product-grid {
+		justify-content: center;
+		width: calc(100% - 1rem);
+	}
+	.product-card {
+		width: 100%;
+	}
+	.modal-box {
+		width: auto;
+		font-size: 4vw;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.burger {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+		cursor: pointer;
+		z-index: 3;
+		right: 0;
+	}
+	.burger span {
+		background-color: var(--text-color);
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		top: 9px;
+	}
+	.burger::before,
+	.burger::after {
+		content: '';
+		background-color: var(--text-color);
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+	}
+	.burger::before {
+		top: 0;
+	}
+	.burger::after {
+		bottom: 0;
+	}
+	.theme-toggle {
+		display: none;
+	}
+	.theme-toggle.active {
+		display: block;
+		position: absolute;
+		top: 350px;
+		z-index: 3;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.category-menu {
+		display: none;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: var(--header-color);
+	}
+	.category-menu.active {
+		display: block;
+	}
+	.category-menu ul {
+		display: flex;
+		list-style: none;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 35%;
+	}
+	.category-menu ul li {
+		margin-bottom: 40px;
+	}
+	.category-menu ul li a {
+		font-size: 25px;
+	}
+}
