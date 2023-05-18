@@ -29,10 +29,22 @@ function retrieveFormValue(event) {
 		comment: comment.value,
 	};
 
-	alert(
-		`Вы купили товар с номером цвета ${valueForm.color} ( сам цвет: ${valueForm.colorHex} ) 
-    c кол-ом ${valueForm.count}  и комментарием ' ${valueForm.comment} ' `
-	);
+	if (
+		countProduct.value === '' ||
+		colorInput.value === '' ||
+		colorInput.nextElementSibling.value === '' ||
+		comment.value === ''
+	) {
+		buyBtnModal.disabled = true;
+		buyBtnModal.classList.add('disabled');
+	} else {
+		buyBtnModal.disabled = false;
+		buyBtnModal.classList.remove('disabled');
+		alert(
+			`Вы купили товар с номером цвета ${valueForm.color} 
+      c кол-ом ${valueForm.count}  и комментарием ' ${valueForm.comment} ' `
+		);
+	}
 
 	modal.classList.remove('open');
 	document.getElementById('form').reset();
