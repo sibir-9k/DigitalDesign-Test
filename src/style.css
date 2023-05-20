@@ -75,13 +75,10 @@ header {
 .logo {
 	font-size: 1.5rem;
 	color: var(--text-color);
-	/* z-index: 3; */
 }
-
 .burger {
 	display: none;
 }
-
 .product-grid {
 	display: flex;
 	flex-wrap: wrap;
@@ -127,7 +124,6 @@ footer ul li a:focus:after {
 /* -------------------------------------------------- */
 section {
 	padding: 2rem;
-	/* background-color: #eee; */
 	margin-top: -1rem;
 }
 section h2 {
@@ -212,14 +208,12 @@ section h2 {
 	justify-content: center;
 	border-radius: 30px;
 }
-
 h3 + label {
 	color: var(--text-color);
 	font-size: 1.5rem;
 	font-weight: bold;
 	margin-bottom: 1rem;
 }
-
 input[type='number'] {
 	text-align: center;
 	width: 100%;
@@ -235,7 +229,6 @@ input[type='number'] {
 	text-transform: uppercase;
 	color: var(--text-color);
 }
-
 .radio-box {
 	margin: 18px;
 	gap: 10px;
@@ -243,7 +236,6 @@ input[type='number'] {
 	grid-template-columns: repeat(2, 1fr);
 	gap: 1rem;
 }
-
 .radio-color {
 	width: 20px;
 	height: 20px;
@@ -266,7 +258,6 @@ input[type='number'] {
 .color4 {
 	background-color: #e66465;
 }
-
 textarea {
 	width: 100%;
 	padding: 0.5rem;
@@ -288,22 +279,15 @@ textarea {
 	padding: 0.5rem 1rem;
 	margin-right: 0.5rem;
 }
-
 .btn-form.buy {
 	background-color: var(--buy-color);
 	color: var(--buy-text-color);
 	border: none;
 }
-
 .btn-form.close {
 	background-color: var(--toggle-color);
 	color: var(--text-color);
 	border: none;
-}
-
-.disabled {
-	background-color: red;
-	color: white;
 }
 /* ------------------------------------------------- */
 footer {
@@ -329,7 +313,6 @@ footer a {
 	font-size: 1.1rem;
 }
 /* ------------------------------------------------- */
-
 @media screen and (min-width: 320px) and (max-width: 430px) {
 	header {
 		justify-content: space-between;
