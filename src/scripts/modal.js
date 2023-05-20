@@ -13,6 +13,13 @@ buyBtn.forEach((button) => {
 closeBtnModal.addEventListener('click', (event) => {
 	event.preventDefault();
 	modal.classList.remove('open');
+
+	document.getElementById('number').value = '';
+	document.querySelectorAll('input[name="color"]').forEach((radio) => {
+		radio.checked = false;
+	});
+	document.getElementById('comment').value = '';
+
 });
 
 const retrieveFormValue = (event) => {
@@ -40,7 +47,6 @@ const retrieveFormValue = (event) => {
 		);
 	}
 
-	console.log(valueForm);
 	modal.classList.remove('open');
 	document.getElementById('form').reset();
 };
