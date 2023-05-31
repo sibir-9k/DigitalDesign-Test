@@ -306,7 +306,8 @@ footer li {
 	display: inline-block;
 	margin-right: 1rem;
 }
-footer a {
+footer a,
+footer span {
 	color: var(--footer-link);
 	text-decoration: none;
 	padding: 0.25rem 0.5rem;
